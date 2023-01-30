@@ -23,7 +23,7 @@
 */
 bool compareAddress(jinx::Address firstAddress, jinx::Address secondAddress) 
 { 
-	return firstAddress.get_city() > secondAddress.get_city(); 
+	return firstAddress.get_city() < secondAddress.get_city(); 
 }
 
 int main(int argc, char** argv)
@@ -121,10 +121,10 @@ int main(int argc, char** argv)
 			// Запись в файл отсортированного массива
 			for (int i = 0; i < numberOfEntrees; ++i)
 			{				
-				wrighter	<< addressBook[numberOfEntrees - i - 1].get_city() << ", "
-							<< addressBook[numberOfEntrees - i - 1].get_street() << ", "
-							<< addressBook[numberOfEntrees - i - 1].get_building() << ", "
-							<< addressBook[numberOfEntrees - i - 1].get_appartment() << "\n";
+				wrighter	<< addressBook[i].get_city() << ", "
+							<< addressBook[i].get_street() << ", "
+							<< addressBook[i].get_building() << ", "
+							<< addressBook[i].get_appartment() << "\n";
 			}
 
 		} // end of if (numberOfEntrees > 0)
