@@ -46,18 +46,25 @@ int main(int argc, char** argv)
 
 		if ( numberOfEntrees > 0 )
 		{
+			// переменные дл€ чтени€
 			std::string city; 
 			std::string street;  
 			int building;  
 			int appartment;  
 
+			// итератор дл€ вывода данных
 			int counter = 0;
+
+			// —чЄтчик считываний дл€ выхода из чтени€
+			int exitCount = numberOfEntrees * 5;
 			
 			// ---------------------
 
-			while (!reader.eof())
+			// while (!reader.eof())
+			while (exitCount)	// чтение пока exitCount > 0
 			{
-				counter++;			
+				counter++;		
+				exitCount--;
 
 				switch ( counter )
 				{
@@ -86,11 +93,8 @@ int main(int argc, char** argv)
 					
 			} // end of while ( std::getline(reader, line) )	
 
-			if (reader.eof())
-			{
-				jinx::Address tempAddress(city, street, building, appartment);
-				addressBook.push_back(tempAddress);
-			}
+			// jinx::Address tempAddress(city, street, building, appartment);
+			// addressBook.push_back(tempAddress);			}
 
 			// ------------------------------------
 
