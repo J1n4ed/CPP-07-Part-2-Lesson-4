@@ -32,7 +32,7 @@ namespace jinx
 	bool jinx::Address::set_city(std::string city)
 	{
 		city_ = city;
-		return EXIT_SUCCESS;
+		return true;
 	} // END OF set_city(std::string city)
 
 	/*
@@ -42,7 +42,7 @@ namespace jinx
 	bool jinx::Address::set_street(std::string street)
 	{
 		street_ = street;
-		return EXIT_SUCCESS;
+		return true;
 	} // END OF set_street(std::string street)
 
 	/*
@@ -54,11 +54,11 @@ namespace jinx
 		if (building > 0)
 		{ 
 			building_ = building;
-			return EXIT_SUCCESS;
+			return true;
 		} // end if
 		else
 		{
-			return EXIT_FAILURE;
+			return false;
 		} // end else
 	} // END OF set_building(int building)
 
@@ -71,11 +71,11 @@ namespace jinx
 		if (appartment > 0)
 		{
 			appartment_ = appartment;
-			return EXIT_SUCCESS;
+			return true;
 		} // end if
 		else
 		{
-			return EXIT_FAILURE;
+			return false;
 		} // end else
 	} // END OF set_appartment(int appartment)
 
@@ -95,11 +95,11 @@ namespace jinx
 			street_ = street;
 			building_ = building;
 			appartment_ = appartment;
-			return EXIT_SUCCESS;
+			return true;
 		} // end if
 		else
 		{
-			return EXIT_FAILURE;
+			return false;
 		} // end else
 	} // END OF set_address(std::string city, std::string street, int building, int appartment)
 

@@ -101,13 +101,16 @@ int main(int argc, char** argv)
 			for (int i = 0; i < numberOfEntrees; ++i)
 			{
 				addressBook[i].print_address();
-				std::cout << std::endl;
+				std::cout << std::endl;				
+			}
 
-				// и сразу запись в out.txt
-				wrighter	<< addressBook[numberOfEntrees - i - 1].get_city() << ", "
-							<< addressBook[numberOfEntrees - i - 1].get_street() << ", "
-							<< addressBook[numberOfEntrees - i - 1].get_building() << ", "
-							<< addressBook[numberOfEntrees - i - 1].get_appartment() << "\n";
+			// Запись в файл out.txt
+			for (int i = numberOfEntrees - 1; i >= 0; i--)
+			{
+				wrighter	<< addressBook[i].get_city() << ", "
+							<< addressBook[i].get_street() << ", "
+							<< addressBook[i].get_building() << ", "
+							<< addressBook[i].get_appartment() << "\n";
 			}
 
 		} // end of if (numberOfEntrees > 0)
